@@ -20,6 +20,7 @@ class MainCoordinator: Coordinator {
     //MARK: - Starting page for root
     func start() {
         let vc = MainViewController(nibName: nil, bundle: nil)
+        vc.title = "Home Page"
         vc.mainCoordinator = self
         self.navigation.viewControllers = [vc]
     }
@@ -27,7 +28,7 @@ class MainCoordinator: Coordinator {
     //MARK: - Push the details view controller
     func viewDetails(){
         let detailsVc = DetailsViewController(nibName: nil, bundle: nil)
-        detailsVc.title = "Details"
+        detailsVc.title = "Details Page"
         detailsVc.mainCoordinator = self
         self.navigation.pushViewController(detailsVc, animated: true)
     }
@@ -37,7 +38,7 @@ class MainCoordinator: Coordinator {
         let nv = UINavigationController()
         let authVc = AuthViewController(nibName: nil, bundle: nil)
         authVc.mainCoordinator = self
-        authVc.title = "Login/SignUp"
+        authVc.title = "Login/SignUp Page"
         nv.viewControllers = [authVc]
         self.navigation.present(nv, animated: true, completion: nil)
     }

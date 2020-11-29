@@ -10,14 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    let lblTitle: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "MainViewController"
-        label.textAlignment = .center
-        return label
-    }()
-    
     let btDetails: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -45,25 +37,16 @@ class MainViewController: UIViewController {
     // MARK: - SetUpUIs
     private func setUpUI(){
         self.view.backgroundColor = .white
-        self.setUpTitle()
         self.setUpBtDetails()
         self.setUpAuthButton()
         
     }
     
-    // MARK: - SetUpTitle
-    private func setUpTitle(){
-        self.view.addSubview(self.lblTitle)
-        self.lblTitle.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        self.lblTitle.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        self.lblTitle.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-    }
-    
     //MARK: - SetUpDetailsButton
     private func setUpBtDetails(){
         self.view.addSubview(self.btDetails)
-        self.btDetails.topAnchor.constraint(equalTo: self.lblTitle.bottomAnchor, constant: 10).isActive = true
-        self.btDetails.centerXAnchor.constraint(equalTo: self.lblTitle.centerXAnchor).isActive = true
+        self.btDetails.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        self.btDetails.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.btDetails.addTarget(self, action: #selector(self.btDetails(_:)), for: .touchUpInside)
     }
     
@@ -71,7 +54,7 @@ class MainViewController: UIViewController {
     private func setUpAuthButton(){
         self.view.addSubview(self.btAuth)
         self.btAuth.topAnchor.constraint(equalTo: self.btDetails.bottomAnchor, constant: 10).isActive = true
-        self.btAuth.centerXAnchor.constraint(equalTo: self.lblTitle.centerXAnchor).isActive = true
+        self.btAuth.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.btAuth.addTarget(self, action: #selector(self.btAuth(_:)), for: .touchUpInside)
     }
     
