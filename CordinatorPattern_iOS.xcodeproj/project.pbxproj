@@ -15,6 +15,11 @@
 		0CFB9640257396760008278F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CFB963E257396760008278F /* LaunchScreen.storyboard */; };
 		0CFB964B257396760008278F /* CordinatorPattern_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB964A257396760008278F /* CordinatorPattern_iOSTests.swift */; };
 		0CFB9656257396760008278F /* CordinatorPattern_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB9655257396760008278F /* CordinatorPattern_iOSUITests.swift */; };
+		0CFB9667257397530008278F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB9666257397530008278F /* Coordinator.swift */; };
+		0CFB966A257398170008278F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB9669257398170008278F /* MainCoordinator.swift */; };
+		0CFB966D257398FE0008278F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB966C257398FE0008278F /* MainViewController.swift */; };
+		0CFB966F25739E2F0008278F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB966E25739E2F0008278F /* AuthViewController.swift */; };
+		0CFB967125739E370008278F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB967025739E370008278F /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		0CFB9651257396760008278F /* CordinatorPattern_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CordinatorPattern_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CFB9655257396760008278F /* CordinatorPattern_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordinatorPattern_iOSUITests.swift; sourceTree = "<group>"; };
 		0CFB9657257396760008278F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CFB9666257397530008278F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		0CFB9669257398170008278F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		0CFB966C257398FE0008278F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0CFB966E25739E2F0008278F /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		0CFB967025739E370008278F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,8 @@
 		0CFB9632257396740008278F /* CordinatorPattern_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0CFB966B257398E30008278F /* ViewControllers */,
+				0CFB9663257397140008278F /* Coordinator */,
 				0CFB9633257396740008278F /* AppDelegate.swift */,
 				0CFB9635257396740008278F /* SceneDelegate.swift */,
 				0CFB9637257396740008278F /* ContentView.swift */,
@@ -134,6 +146,33 @@
 				0CFB9657257396760008278F /* Info.plist */,
 			);
 			path = CordinatorPattern_iOSUITests;
+			sourceTree = "<group>";
+		};
+		0CFB9663257397140008278F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0CFB9668257398000008278F /* MainCoordinator */,
+				0CFB9666257397530008278F /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0CFB9668257398000008278F /* MainCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0CFB9669257398170008278F /* MainCoordinator.swift */,
+			);
+			path = MainCoordinator;
+			sourceTree = "<group>";
+		};
+		0CFB966B257398E30008278F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0CFB966C257398FE0008278F /* MainViewController.swift */,
+				0CFB966E25739E2F0008278F /* AuthViewController.swift */,
+				0CFB967025739E370008278F /* DetailsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CFB9667257397530008278F /* Coordinator.swift in Sources */,
 				0CFB9634257396740008278F /* AppDelegate.swift in Sources */,
 				0CFB9636257396740008278F /* SceneDelegate.swift in Sources */,
+				0CFB967125739E370008278F /* DetailsViewController.swift in Sources */,
+				0CFB966F25739E2F0008278F /* AuthViewController.swift in Sources */,
+				0CFB966D257398FE0008278F /* MainViewController.swift in Sources */,
+				0CFB966A257398170008278F /* MainCoordinator.swift in Sources */,
 				0CFB9638257396740008278F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
