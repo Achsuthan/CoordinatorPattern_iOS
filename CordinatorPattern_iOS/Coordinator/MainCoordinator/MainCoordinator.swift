@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: Coordinator {
-    
+class MainCoordinator: NSObject, Coordinator {
+    var childCoordinators: [Coordinator] = []
     var navigation: UINavigationController
     
     init(_ navigation: UINavigationController) {
@@ -19,27 +19,59 @@ class MainCoordinator: Coordinator {
     
     //MARK: - Starting page for root
     func start() {
+        self.navigation.delegate = self
         let vc = MainViewController(nibName: nil, bundle: nil)
         vc.title = "Home Page"
         vc.mainCoordinator = self
         self.navigation.viewControllers = [vc]
     }
     
+    
+    func childDidFinish(_ child: Coordinator?) {
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === child {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
+    }
+    
+    
     //MARK: - Push the details view controller
     func viewDetails(){
-        let detailsVc = DetailsViewController(nibName: nil, bundle: nil)
-        detailsVc.title = "Details Page"
-        detailsVc.mainCoordinator = self
-        self.navigation.pushViewController(detailsVc, animated: true)
+        let detailsCordinator = DetailsCoordinator(self.navigation)
+        self.childCoordinators.append(detailsCordinator)
+        detailsCordinator.parentCoordinator = self
+        detailsCordinator.start()
     }
     
     //MARK: - Present the AuthViewcontroller with navigation controller
     func viewAuth(){
-        let nv = UINavigationController()
-        let authVc = AuthViewController(nibName: nil, bundle: nil)
-        authVc.mainCoordinator = self
-        authVc.title = "Login/SignUp Page"
-        nv.viewControllers = [authVc]
-        self.navigation.present(nv, animated: true, completion: nil)
+        let authCordinator = AuthCoordinator(self.navigation)
+        self.childCoordinators.append(authCordinator)
+        authCordinator.parentCoordinator = self
+        authCordinator.start()
     }
 }
+
+extension MainCoordinator: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        // Read the view controller we’re moving from.
+        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
+            return
+        }
+        
+        // Check whether our view controller array already contains that view controller. If it does it means we’re pushing a different view controller on top rather than popping it, so exit.
+        if navigationController.viewControllers.contains(fromViewController) {
+            return
+        }
+        
+        // We’re still here – it means we’re popping the view controller, so we can check whether it’s a buy view controller
+        if let detailsViewController = fromViewController as? DetailsViewController {
+            // We're popping a buy view controller; end its coordinator
+            self.childDidFinish(detailsViewController.detailsCoordinator)
+        }
+    }
+}
+
+

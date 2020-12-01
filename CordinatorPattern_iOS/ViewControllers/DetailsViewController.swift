@@ -10,7 +10,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    var mainCoordinator: MainCoordinator? = nil
+    var detailsCoordinator: DetailsCoordinator? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()

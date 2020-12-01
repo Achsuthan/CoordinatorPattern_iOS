@@ -1,1 +1,1 @@
-# CordinatorPattern_iOS
+# CoordinatorPattern for iOS

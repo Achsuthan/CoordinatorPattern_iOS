@@ -10,7 +10,7 @@ import UIKit
 
 class AuthViewController: UIViewController {
     
-    var mainCoordinator: MainCoordinator? = nil
+    var authCoordinator: AuthCoordinator? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()

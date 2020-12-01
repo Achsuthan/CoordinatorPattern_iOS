@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CB660752576516300991473 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB660742576516300991473 /* AuthCoordinator.swift */; };
+		0CB66078257663BB00991473 /* DetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB66077257663BB00991473 /* DetailsCoordinator.swift */; };
 		0CFB9634257396740008278F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB9633257396740008278F /* AppDelegate.swift */; };
 		0CFB9636257396740008278F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB9635257396740008278F /* SceneDelegate.swift */; };
 		0CFB9638257396740008278F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB9637257396740008278F /* ContentView.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CB660742576516300991473 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		0CB66077257663BB00991473 /* DetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCoordinator.swift; sourceTree = "<group>"; };
 		0CFB9630257396740008278F /* CordinatorPattern_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CordinatorPattern_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CFB9633257396740008278F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CFB9635257396740008278F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CB660732576514800991473 /* AuthCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0CB660742576516300991473 /* AuthCoordinator.swift */,
+			);
+			path = AuthCoordinator;
+			sourceTree = "<group>";
+		};
+		0CB66076257663AA00991473 /* DetailsCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0CB66077257663BB00991473 /* DetailsCoordinator.swift */,
+			);
+			path = DetailsCoordinator;
+			sourceTree = "<group>";
+		};
 		0CFB9627257396740008278F = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +171,8 @@
 		0CFB9663257397140008278F /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				0CB66076257663AA00991473 /* DetailsCoordinator */,
+				0CB660732576514800991473 /* AuthCoordinator */,
 				0CFB9668257398000008278F /* MainCoordinator */,
 				0CFB9666257397530008278F /* Coordinator.swift */,
 			);
@@ -313,7 +335,9 @@
 				0CFB966F25739E2F0008278F /* AuthViewController.swift in Sources */,
 				0CFB966D257398FE0008278F /* MainViewController.swift in Sources */,
 				0CFB966A257398170008278F /* MainCoordinator.swift in Sources */,
+				0CB660752576516300991473 /* AuthCoordinator.swift in Sources */,
 				0CFB9638257396740008278F /* ContentView.swift in Sources */,
+				0CB66078257663BB00991473 /* DetailsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
